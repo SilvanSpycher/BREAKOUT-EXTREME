@@ -41,7 +41,12 @@ public class Paddle : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        transform.Translate(Vector3.right * moveDirection*speed);
+       
+        transform.Translate(Vector3.right * moveDirection * speed);
         moveDirection = 0;
+
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+        pos.x = Mathf.Clamp01(pos.x);
+        transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 }
