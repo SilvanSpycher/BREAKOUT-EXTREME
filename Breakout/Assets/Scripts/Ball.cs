@@ -11,8 +11,9 @@ public class Ball : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        direction.x = Random.Range(-1f, 1f);
-        direction.y = Random.Range(-1f, 1f);
+        direction.y = 0.5f;
+        //direction.x = Random.Range(-1f, 1f);
+        //direction.y = Random.Range(-1f, 1f);
         collider = GetComponent<Collider>();
         rigidBody = GetComponent<Rigidbody>();
     }
@@ -29,27 +30,29 @@ public class Ball : MonoBehaviour {
             if (DecideBounceX(transform.position - collision.transform.position))
             {
                 bounce("x");
+                GameManager.instance.CollideBox(collision.gameObject);
             }
             else
             {
                 bounce("y");
+                GameManager.instance.CollideBox(collision.gameObject);
             }
             
-            GameManager.instance.CollideBox(collision.gameObject);
+            //GameManager.instance.CollideBox(collision.gameObject);
         }
     }
 
     private bool DecideBounceX(Vector3 distance)
     {
-        if (Mathf.Abs(distance.x) > (0.525)) //0.525 = ball.width/2 + block.width/2
+        if (Mathf.Abs(distance.y) > (0.525)) //0.525 = ball.width/2 + block.width/2
         {
-            //if (Mathf.Abs(distance.y) > (0.525)){   }         //this would be the case of the ball hitting exactly the edge
+            //if (Mathf.Abs(distance.x) > (0.525)){   }         //this would be the case of the ball hitting exactly the edge
 
-            return true;
+            return false;
         }
         else
         {
-            return false;
+            return true;
         }
     }
 
