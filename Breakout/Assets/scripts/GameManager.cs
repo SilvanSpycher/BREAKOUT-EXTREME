@@ -35,4 +35,9 @@ public class GameManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
     }
+
+    public void DeleteBall(Ball ball)
+    {
+        Destroy(ball.gameObject);
+    }
 }

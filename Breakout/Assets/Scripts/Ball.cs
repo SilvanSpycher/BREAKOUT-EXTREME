@@ -6,30 +6,24 @@ public class Ball : MonoBehaviour {
 
     private Vector3 direction = Vector3.zero;
     private float speed = 0.2f;
-
+    private Collider collider;
 
 	// Use this for initialization
 	void Start () {
         direction.x = Random.Range(-1f, 1f);
         direction.y = Random.Range(-1f, 1f);
-
-
-	}
+        collider = GetComponent<Collider>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "paddle")
+        bounce("y");
+        if (collision.gameObject.tag == "Paddle")
         {
-            rigidBody.AddForce(new Vector2(-50, 20), ForceMode.Impulse);
-            rigidBody.detectCollisions = false;
-            audioSource.PlayOneShot(sfxDeath);
-
-
+            
         }
         else if ( collision.gameObject.tag == "block")
         {
-
-
 
         }
     }
@@ -58,15 +52,28 @@ public class Ball : MonoBehaviour {
             bounce("y");
         }
 
+        if (pos.y < 0)
+        {
+            GameManager.instance.DeleteBall(this);
+        }
+
         
         
         transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 
 
-    private void bounce(string axe)
+    private void bounce(string axis)
     {
+        if (axis == "x")
+        {
+            direction.x = -direction.x;
+        }
 
+        if (axis == "y")
+        {
+            direction.y = -direction.y;
+        }
 
     }
 }
