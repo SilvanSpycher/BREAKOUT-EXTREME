@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour {
         Destroy(ball.gameObject);
     }
 
-    public void CollideBox(GameObject Box)
+    public void CollideBox(GameObject box)
     {
-        //Destroy(Box.gameObject,0.1f);
+        Destroy(box.gameObject);
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -453,6 +453,18 @@ Prefab:
       propertyPath: m_TagString
       value: Paddle
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 64941b8eadfbb89448c49bc8828d3b43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 64941b8eadfbb89448c49bc8828d3b43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 64941b8eadfbb89448c49bc8828d3b43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64941b8eadfbb89448c49bc8828d3b43, type: 3}
   m_IsPrefabParent: 0
@@ -497,15 +509,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 08fe86016f89c254d8d4093188dfc575, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.26314262
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 08fe86016f89c254d8d4093188dfc575, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.26314262
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 08fe86016f89c254d8d4093188dfc575, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.26314262
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 08fe86016f89c254d8d4093188dfc575, type: 3}
       propertyPath: m_TagString

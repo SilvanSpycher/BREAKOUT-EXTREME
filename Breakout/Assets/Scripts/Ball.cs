@@ -41,7 +41,16 @@ public class Ball : MonoBehaviour {
 
     private bool DecideBounceX(Vector3 distance)
     {
-        return true;
+        if (Mathf.Abs(distance.x) > (0.525)) //0.525 = ball.width/2 + block.width/2
+        {
+            //if (Mathf.Abs(distance.y) > (0.525)){   }         //this would be the case of the ball hitting exactly the edge
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Update()
