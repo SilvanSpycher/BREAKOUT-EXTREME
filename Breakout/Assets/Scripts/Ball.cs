@@ -11,9 +11,8 @@ public class Ball : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        direction.y = 0.5f;
-        //direction.x = Random.Range(-1f, 1f);
-        //direction.y = Random.Range(-1f, 1f);
+        direction.x = Random.Range(-1f, 1f);
+        direction.y = Random.Range(-1f, 1f);
         collider = GetComponent<Collider>();
         rigidBody = GetComponent<Rigidbody>();
     }
@@ -30,15 +29,13 @@ public class Ball : MonoBehaviour {
             if (DecideBounceX(transform.position - collision.transform.position))
             {
                 bounce("x");
-                GameManager.instance.CollideBox(collision.gameObject);
             }
             else
             {
                 bounce("y");
-                GameManager.instance.CollideBox(collision.gameObject);
             }
             
-            //GameManager.instance.CollideBox(collision.gameObject);
+            GameManager.instance.CollideBox(collision.gameObject);
         }
     }
 
@@ -54,12 +51,6 @@ public class Ball : MonoBehaviour {
         {
             return true;
         }
-    }
-
-    private void Update()
-    {
-        
-       
     }
 
     // Update is called once per frame
@@ -85,8 +76,6 @@ public class Ball : MonoBehaviour {
             GameManager.instance.DeleteBall(this);
         }
 
-        
-        
         transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 
