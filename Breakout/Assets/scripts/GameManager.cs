@@ -40,4 +40,9 @@ public class GameManager : MonoBehaviour {
     {
         Destroy(ball.gameObject);
     }
+
+    public void CollideBox(GameObject Box)
+    {
+        //Destroy(Box.gameObject,0.1f);
+    }
 }

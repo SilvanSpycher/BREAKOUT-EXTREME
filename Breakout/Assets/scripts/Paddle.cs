@@ -7,10 +7,13 @@ public class Paddle : MonoBehaviour {
     private Rigidbody rigidBody;
     private int moveDirection = 0;
     private float speed = 0.25f;
+    
 
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
+        
+        
     }
 	
 	// Update is called once per frame

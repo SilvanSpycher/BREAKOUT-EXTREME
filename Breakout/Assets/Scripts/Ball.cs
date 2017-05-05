@@ -7,25 +7,41 @@ public class Ball : MonoBehaviour {
     private Vector3 direction = Vector3.zero;
     private float speed = 0.2f;
     private Collider collider;
+    private Rigidbody rigidBody;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         direction.x = Random.Range(-1f, 1f);
         direction.y = Random.Range(-1f, 1f);
         collider = GetComponent<Collider>();
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        bounce("y");
+        
         if (collision.gameObject.tag == "Paddle")
         {
-            
+            bounce("y");
         }
-        else if ( collision.gameObject.tag == "block")
+        else if ( collision.gameObject.tag == "Block")
         {
-
+            if (DecideBounceX(transform.position - collision.transform.position))
+            {
+                bounce("x");
+            }
+            else
+            {
+                bounce("y");
+            }
+            
+            GameManager.instance.CollideBox(collision.gameObject);
         }
+    }
+
+    private bool DecideBounceX(Vector3 distance)
+    {
+        return true;
     }
 
     private void Update()
