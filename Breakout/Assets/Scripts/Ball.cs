@@ -25,4 +25,16 @@ public class Ball : MonoBehaviour
         rigidBody.velocity = constantSpeed * (rigidBody.velocity.normalized);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        else if (collision.gameObject.tag == "Block")
+        {
+            GameManager.instance.Delete(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "PowerUp")
+        {
+            Physics.IgnoreCollision(collision.collider, collider);
+        }
+    }
+
 }
