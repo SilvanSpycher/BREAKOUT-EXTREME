@@ -8,16 +8,16 @@ public class Ball : MonoBehaviour {
     private float speed = 0.2f;
     private Collider collider;
     private Rigidbody rigidBody;
-
     // Use this for initialization
     void Start () {
-        direction.x = Random.Range(-1f, 1f);
-        direction.y = Random.Range(-1f, 1f);
+        direction.x = -3;// Random.Range(-1f, 1f);
+        direction.y = 9;// Random.Range(-1f, 1f);
         collider = GetComponent<Collider>();
         rigidBody = GetComponent<Rigidbody>();
+        rigidBody.AddForce(direction, ForceMode.Impulse);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         
         if (collision.gameObject.tag == "Paddle")
@@ -37,7 +37,7 @@ public class Ball : MonoBehaviour {
             
             GameManager.instance.CollideBox(collision.gameObject);
         }
-    }
+    }*/
 
     private bool DecideBounceX(Vector3 distance)
     {
@@ -55,7 +55,7 @@ public class Ball : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-        transform.Translate(direction * speed);
+        //transform.Translate(direction * speed);
 
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
 
