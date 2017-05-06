@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Block : MonoBehaviour {
+    [SerializeField] private PowerUp powerUp;
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +14,18 @@ public class Block : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void SetPowerUp(PowerUp newPowerUp)
+    {
+        powerUp = newPowerUp;
+    }
+
+
+    public void OnDestroy()
+    {
+        if (powerUp != null)
+        {
+            powerUp.wake();
+        }
+    }
 }

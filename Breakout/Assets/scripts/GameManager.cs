@@ -45,4 +45,5 @@ public class GameManager : MonoBehaviour {
     {
         Destroy(box.gameObject);
     }
+
 }
