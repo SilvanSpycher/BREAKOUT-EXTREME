@@ -36,14 +36,19 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
+    public void Delete(GameObject obj)
+    {
+        Destroy(obj.gameObject);
+    }
+
+    public void DeletePowerUp(PowerUp powerUp)
+    {
+        Destroy(powerUp.gameObject);
+    }
+
     public void DeleteBall(Ball ball)
     {
         Destroy(ball.gameObject);
     }
-
-    public void CollideBox(GameObject box)
-    {
-        Destroy(box.gameObject);
-    }
-
+    
 }

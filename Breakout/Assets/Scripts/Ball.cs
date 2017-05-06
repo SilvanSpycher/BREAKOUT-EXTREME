@@ -19,12 +19,12 @@ public class Ball : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+
         if (collision.gameObject.tag == "Paddle")
         {
             Bounce("y");
         }
-        else if ( collision.gameObject.tag == "Block")
+        else if (collision.gameObject.tag == "Block")
         {
             if (DecideBounceX(transform.position - collision.transform.position))
             {
@@ -34,8 +34,12 @@ public class Ball : MonoBehaviour {
             {
                 Bounce("y");
             }
-            
-            GameManager.instance.CollideBox(collision.gameObject);
+
+            GameManager.instance.Delete(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "PowerUp")
+        {
+            Physics.IgnoreCollision(collision.collider, collider);
         }
     }
 

@@ -25,7 +25,7 @@ public class Block : MonoBehaviour {
     {
         if (powerUp != null)
         {
-            powerUp.wake();
+            powerUp.Wake();
         }
     }
 }
