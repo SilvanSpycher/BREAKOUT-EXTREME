@@ -19,23 +19,27 @@ public class Ball : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+
         if (collision.gameObject.tag == "Paddle")
         {
-            bounce("y");
+            Bounce("y");
         }
-        else if ( collision.gameObject.tag == "Block")
+        else if (collision.gameObject.tag == "Block")
         {
             if (DecideBounceX(transform.position - collision.transform.position))
             {
-                bounce("x");
+                Bounce("x");
             }
             else
             {
-                bounce("y");
+                Bounce("y");
             }
-            
-            GameManager.instance.CollideBox(collision.gameObject);
+
+            GameManager.instance.Delete(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "PowerUp")
+        {
+            Physics.IgnoreCollision(collision.collider, collider);
         }
     }
 
@@ -62,13 +66,13 @@ public class Ball : MonoBehaviour {
         if (pos.x < 0 || pos.x > 1)
         {
             pos.x = Mathf.Clamp01(pos.x);
-            bounce("x");
+            Bounce("x");
         }
         
         if (pos.y > 1)
         {
             pos.y = Mathf.Clamp01(pos.y);
-            bounce("y");
+            Bounce("y");
         }
 
         if (pos.y < 0)
@@ -80,7 +84,7 @@ public class Ball : MonoBehaviour {
     }
 
 
-    private void bounce(string axis)
+    private void Bounce(string axis)
     {
         if (axis == "x")
         {
