@@ -6,22 +6,18 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour {
 
     private Rigidbody rigidBody;
-    private Renderer renderer;
     private Collider collider;
     // Use this for initialization
     void Start () {
-
-        this.renderer = GetComponent<Renderer>();
         this.rigidBody = GetComponent<Rigidbody>();
         this.collider = GetComponent<Collider>();
-        renderer.enabled = false;
-        
+        rigidBody.AddForce(Vector3.down, ForceMode.Impulse);
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -39,11 +35,5 @@ public class PowerUp : MonoBehaviour {
         {
             Physics.IgnoreCollision(collision.collider, collider);
         }
-    }
-
-    public void Wake()
-    {
-        renderer.enabled = true;
-        rigidBody.AddForce(Vector3.down, ForceMode.Impulse);
     }
 }

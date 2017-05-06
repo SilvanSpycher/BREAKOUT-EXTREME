@@ -7,8 +7,11 @@ public class Block : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        if (powerUp != null)
+        {
+            powerUp.gameObject.SetActive(false);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,7 +28,7 @@ public class Block : MonoBehaviour {
     {
         if (powerUp != null)
         {
-            powerUp.Wake();
+            powerUp.gameObject.SetActive(true);
         }
     }
 }

@@ -27,7 +27,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        else if (collision.gameObject.tag == "Block")
+        if (collision.gameObject.tag == "Block")
         {
             GameManager.instance.Delete(collision.gameObject);
         }
