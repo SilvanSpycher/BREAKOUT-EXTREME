@@ -7,6 +7,8 @@ public class PowerUp : MonoBehaviour {
 
     private Rigidbody rigidBody;
     private Collider collider;
+    private string power;
+
     // Use this for initialization
     void Start () {
         this.rigidBody = GetComponent<Rigidbody>();
@@ -25,10 +27,8 @@ public class PowerUp : MonoBehaviour {
         if (collision.gameObject.tag == "Paddle")
         {
             GameManager.instance.DeletePowerUp(this);
+            GameManager.instance.PowerActivate(this.power);
         }
-        else
-        {
-            Physics.IgnoreCollision(collision.collider, collider);
-        }
+
     }
 }

@@ -70,4 +70,8 @@ public class GameManager : MonoBehaviour {
         }
     }
     
+    public void PowerActivate(string power)
+    {
+
+    }
 }
