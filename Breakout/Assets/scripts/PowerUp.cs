@@ -26,12 +26,7 @@ public class PowerUp : MonoBehaviour {
         {
             GameManager.instance.DeletePowerUp(this);
         }
-
-        else if (collision.gameObject.tag == "Block")
-        {
-            Physics.IgnoreCollision(collision.collider, collider);
-        }
-        else if (collision.gameObject.tag == "Ball")
+        else
         {
             Physics.IgnoreCollision(collision.collider, collider);
         }

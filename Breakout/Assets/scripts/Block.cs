@@ -5,6 +5,13 @@ using UnityEngine;
 public class Block : MonoBehaviour {
     [SerializeField] private PowerUp powerUp;
 
+
+    public int Strength
+    {
+        get; set;
+    }
+
+
 	// Use this for initialization
 	void Start () {
         if (powerUp != null)
@@ -21,6 +28,16 @@ public class Block : MonoBehaviour {
     public void SetPowerUp(PowerUp newPowerUp)
     {
         powerUp = newPowerUp;
+    }
+
+    public void OnHit()
+    {
+        Strength -= 1;
+        if (Strength <= 0)
+        {
+            GameManager.instance.BlockDestroyed(this.transform.position);
+            Destroy(this.gameObject);
+        }
     }
 
 

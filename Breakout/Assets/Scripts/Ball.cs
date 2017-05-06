@@ -29,7 +29,7 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Block")
         {
-            GameManager.instance.Delete(collision.gameObject);
+            GameManager.instance.TouchBlock(collision.gameObject.GetComponent<Block>());
         }
         else if (collision.gameObject.tag == "PowerUp")
         {

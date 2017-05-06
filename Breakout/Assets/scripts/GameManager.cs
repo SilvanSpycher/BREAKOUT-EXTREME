@@ -5,7 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
-
+    private float powerUpChance = 0f;
+    [SerializeField] private float chanceIncrease;
+    [SerializeField] private GameObject powerUp;
+    [SerializeField] private GameObject block;
 
 	// Use this for initialization
 	void Start () {
@@ -49,6 +52,22 @@ public class GameManager : MonoBehaviour {
     public void DeleteBall(Ball ball)
     {
         Destroy(ball.gameObject);
+    }
+
+    public void TouchBlock(Block block)
+    {
+        block.OnHit();
+    }
+
+    public void BlockDestroyed(Vector3 blockposition)
+    {
+        powerUpChance += chanceIncrease;
+        if(Random.Range(0f, 1f) < powerUpChance)
+        {
+            GameObject newPowerUp = Instantiate(powerUp) as GameObject;
+            newPowerUp.transform.position = blockposition;
+            powerUpChance = 0;
+        }
     }
     
 }
