@@ -9,11 +9,10 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private float chanceIncrease;
     [SerializeField] private GameObject powerUp;
     [SerializeField] private GameObject block;
-    [SerializeField] private GameObject levelBuilder;
 
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 
     // Update is called once per frame
