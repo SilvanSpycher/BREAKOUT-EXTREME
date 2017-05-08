@@ -142,7 +142,7 @@ MonoBehaviour:
   chanceIncrease: 0.1
   powerUp: {fileID: 1281910814342442, guid: ea0539cb59bad664596223bd63123243, type: 2}
   block: {fileID: 1968558712361952, guid: cf15a1e8f09d2bf419607197966459b2, type: 2}
-  levelBuilder: {fileID: 0}
+  levelBuilder: {fileID: 80814029}
 --- !u!81 &31901176
 AudioListener:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 80814030}
   - component: {fileID: 80814029}
   m_Layer: 0
-  m_Name: EmptyGameObject
+  m_Name: LevelBuilder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
