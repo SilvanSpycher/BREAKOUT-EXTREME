@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Block : MonoBehaviour {
-    [SerializeField] private PowerUp powerUp;
-
 
     public int Strength
     {
@@ -14,10 +12,7 @@ public class Block : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (powerUp != null)
-        {
-            powerUp.gameObject.SetActive(false);
-        }
+
     }
 	
 	// Update is called once per frame
@@ -25,10 +20,6 @@ public class Block : MonoBehaviour {
 		
 	}
 
-    public void SetPowerUp(PowerUp newPowerUp)
-    {
-        powerUp = newPowerUp;
-    }
 
     public void OnHit()
     {
@@ -40,12 +31,4 @@ public class Block : MonoBehaviour {
         }
     }
 
-
-    public void OnDestroy()
-    {
-        if (powerUp != null)
-        {
-            powerUp.gameObject.SetActive(true);
-        }
-    }
 }

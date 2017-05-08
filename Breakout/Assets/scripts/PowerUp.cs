@@ -26,8 +26,8 @@ public class PowerUp : MonoBehaviour {
 
         if (collision.gameObject.tag == "Paddle")
         {
-            GameManager.instance.DeletePowerUp(this);
             GameManager.instance.PowerActivate(this.power);
+            Destroy(this.gameObject);
         }
 
     }

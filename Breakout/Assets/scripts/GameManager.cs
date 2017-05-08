@@ -44,11 +44,6 @@ public class GameManager : MonoBehaviour {
         Destroy(obj.gameObject);
     }
 
-    public void DeletePowerUp(PowerUp powerUp)
-    {
-        Destroy(powerUp.gameObject);
-    }
-
     public void DeleteBall(Ball ball)
     {
         Destroy(ball.gameObject);

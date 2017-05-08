@@ -31,10 +31,6 @@ public class Ball : MonoBehaviour
         {
             GameManager.instance.TouchBlock(collision.gameObject.GetComponent<Block>());
         }
-        else if (collision.gameObject.tag == "PowerUp")
-        {
-            Physics.IgnoreCollision(collision.collider, collider);
-        }
     }
 
 }
