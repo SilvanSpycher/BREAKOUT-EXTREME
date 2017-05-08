@@ -22,11 +22,11 @@ public class Paddle : MonoBehaviour {
         {
             if (Input.mousePosition.x > Screen.width/2)
             {
-                this.moveLeft();
+                moveLeft();
             }
             else if (Input.mousePosition.x < Screen.width / 2)
             {
-                this.moveRight();
+                moveRight();
             }
         }
 	}

@@ -26,8 +26,8 @@ public class Block : MonoBehaviour {
         Strength -= 1;
         if (Strength <= 0)
         {
-            GameManager.instance.BlockDestroyed(this.transform.position);
-            Destroy(this.gameObject);
+            GameManager.instance.BlockDestroyed(transform.position);
+            Destroy(gameObject);
         }
     }
 
