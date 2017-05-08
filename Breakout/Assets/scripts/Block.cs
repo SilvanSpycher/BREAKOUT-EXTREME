@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Block : MonoBehaviour {
-    [SerializeField] private PowerUp powerUp;
-
 
     public int Strength
     {
@@ -15,6 +13,7 @@ public class Block : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+
 
     }
 	
@@ -29,11 +28,9 @@ public class Block : MonoBehaviour {
         Strength -= 1;
         if (Strength <= 0)
         {
-            GameManager.instance.BlockDestroyed(this.transform.position);
-            Destroy(this.gameObject);
+            GameManager.instance.BlockDestroyed(transform.position);
+            Destroy(gameObject);
         }
     }
-
-
 
 }

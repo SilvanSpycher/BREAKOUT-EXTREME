@@ -31,7 +31,6 @@ public class Ball : MonoBehaviour
         {
             GameManager.instance.TouchBlock(collision.gameObject.GetComponent<Block>());
         }
-
     }
 
 }

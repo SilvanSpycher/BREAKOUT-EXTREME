@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 
     // Update is called once per frame
@@ -44,11 +44,6 @@ public class GameManager : MonoBehaviour {
         Destroy(obj.gameObject);
     }
 
-    public void DeletePowerUp(PowerUp powerUp)
-    {
-        Destroy(powerUp.gameObject);
-    }
-
     public void DeleteBall(Ball ball)
     {
         Destroy(ball.gameObject);
@@ -70,8 +65,35 @@ public class GameManager : MonoBehaviour {
         }
     }
     
-    public void PowerActivate(string power)
+    public void PowerActivate(int power)
     {
+        switch (power)
+        {
+            case 1:         //paddle bigger
+                break;
+            case 2:         //paddle smaller
+                break;
+            case 3:         //3 balls
+                break;
+            case 4:         //ball faster
+                break;
+            case 5:         //ball slower
+                break;
+            case 6:         //ball sticks to paddle
+                break;
+            case 7:         //ball destroys blocks without bouncing
+                break;
+            case 8:         //ball bigger
+                break;
+            case 9:         //ball smaller
+                break;
+            case 10:        //rockets from paddle
+                break;
+            case 11:        //+1 life
+                break;
+            case 12:        //bullettime
+                break;      
 
+        }
     }
 }
