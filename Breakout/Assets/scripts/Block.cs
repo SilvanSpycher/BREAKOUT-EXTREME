@@ -13,22 +13,16 @@ public class Block : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
-        if (powerUp != null)
-        {
-            powerUp.gameObject.SetActive(false);
-        }
+	void Start ()
+    {
+
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
-
-    public void SetPowerUp(PowerUp newPowerUp)
-    {
-        powerUp = newPowerUp;
-    }
 
     public void OnHit()
     {
@@ -41,11 +35,5 @@ public class Block : MonoBehaviour {
     }
 
 
-    public void OnDestroy()
-    {
-        if (powerUp != null)
-        {
-            powerUp.gameObject.SetActive(true);
-        }
-    }
+
 }
