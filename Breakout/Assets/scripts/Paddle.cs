@@ -52,4 +52,8 @@ public class Paddle : MonoBehaviour {
         pos.x = Mathf.Clamp01(pos.x);
         transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
+
+    public void grow()
+    {
+    }
 }

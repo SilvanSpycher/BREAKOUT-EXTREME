@@ -14,4 +14,71 @@ public class Power : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void PaddleBigger()
+    {
+
+    }
+
+    public void PaddleSmaller()
+    {
+
+
+    }
+
+    public void ThreeBalls()
+    {
+
+    }
+
+    public void BallFaster()
+    {
+
+
+    }
+
+    public void BallSlower()
+    {
+
+    }
+
+    public void StickyBall()
+    {
+
+
+    }
+
+    public void BreakingBall()
+    {
+
+    }
+
+    public void BallBigger()
+    {
+
+
+    }
+
+    public void BallSmaller()
+    {
+
+    }
+
+    public void Rockets()
+    {
+
+
+    }
+
+    public void ExtraLife()
+    {
+
+    }
+
+    public void Bullettime()
+    {
+
+
+    }
+
 }

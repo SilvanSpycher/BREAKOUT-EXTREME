@@ -143,6 +143,9 @@ MonoBehaviour:
   powerUp: {fileID: 1281910814342442, guid: ea0539cb59bad664596223bd63123243, type: 2}
   block: {fileID: 1968558712361952, guid: cf15a1e8f09d2bf419607197966459b2, type: 2}
   levelBuilder: {fileID: 80814029}
+  paddle: {fileID: 1402967351}
+  orthographicSize: 5
+  aspect: 1.33333
 --- !u!81 &31901176
 AudioListener:
   m_ObjectHideFlags: 0
@@ -183,8 +186,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 7.8813677
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -207,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 31901174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15.28}
+  m_LocalPosition: {x: 0, y: 0.1, z: -15.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -562,6 +565,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08fe86016f89c254d8d4093188dfc575, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1806168675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1806168676}
+  m_Layer: 0
+  m_Name: Power
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1806168676
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1806168675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09765625, y: -1.2481079, z: 0.828125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1957202505 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 08fe86016f89c254d8d4093188dfc575, type: 3}
