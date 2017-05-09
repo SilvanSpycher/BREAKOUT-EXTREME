@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9e13b2c4c14284dbf793121ef4e8b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceIncrease: 0.1
+  chanceIncrease: 0.05
   powerUp: {fileID: 1281910814342442, guid: ea0539cb59bad664596223bd63123243, type: 2}
   block: {fileID: 1968558712361952, guid: cf15a1e8f09d2bf419607197966459b2, type: 2}
   levelBuilder: {fileID: 80814029}
@@ -207,7 +207,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 31901174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -447,7 +447,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 79edd666c8cfa1547a03bc8cdba03943, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 79edd666c8cfa1547a03bc8cdba03943, type: 3}
       propertyPath: m_LocalPosition.z
@@ -471,15 +471,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 79edd666c8cfa1547a03bc8cdba03943, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 79edd666c8cfa1547a03bc8cdba03943, type: 3}
       propertyPath: m_LocalScale.y
-      value: 8.8394575
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 79edd666c8cfa1547a03bc8cdba03943, type: 3}
       propertyPath: m_LocalScale.x
-      value: 13.673811
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 79edd666c8cfa1547a03bc8cdba03943, type: 3}
       propertyPath: m_LocalScale.z
@@ -537,7 +537,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 08fe86016f89c254d8d4093188dfc575, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 08fe86016f89c254d8d4093188dfc575, type: 3}
       propertyPath: m_LocalScale.x
@@ -577,6 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6c1cf4dbfc66145a6519c48f4672ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constantSpeed: 10
 --- !u!135 &1957202507
 SphereCollider:
   m_ObjectHideFlags: 0
