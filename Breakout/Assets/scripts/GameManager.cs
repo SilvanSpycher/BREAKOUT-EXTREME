@@ -4,26 +4,67 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public static GameManager instance = null;
-    private float powerUpChance = 0f;
+
     [SerializeField] private float chanceIncrease;
     [SerializeField] private GameObject powerUp;
     [SerializeField] private GameObject block;
     [SerializeField] private LevelBuilder levelBuilder;
 
+    public static GameManager instance = null;
+    private float powerUpChance = 0f;
+    private int powerid;
 
     // Use this for initialization
-    void Start () {
-       /* for (int i = 1; i < 6; i++)
-        {
-            for (int j = -10; j < 10; j += 2)
-            {
-                GameObject newblock = Instantiate(block) as GameObject;
-                newblock.transform.position = new Vector3(j, i, 0);
+    void Start ()
+    {
+        float targetaspect = 16.0f / 10.0f;
 
-            }
-        }*/
-        BuildLevel(1);
+        // determine the game window's current aspect ratio
+        float windowaspect = (float)Screen.width / (float)Screen.height;
+
+        // current viewport height should be scaled by this amount
+        float scaleheight = windowaspect / targetaspect;
+
+        // obtain camera component so we can modify its viewport
+        Camera camera = GetComponent<Camera>();
+
+        // if scaled height is less than current height, add letterbox
+        if (scaleheight < 1.0f)
+        {
+            Rect rect = camera.rect;
+
+            rect.width = 1.0f;
+            rect.height = scaleheight;
+            rect.x = 0;
+            rect.y = (1.0f - scaleheight) / 2.0f;
+
+            camera.rect = rect;
+        }
+        else // add pillarbox
+        {
+            float scalewidth = 1.0f / scaleheight;
+
+            Rect rect = camera.rect;
+
+            rect.width = scalewidth;
+            rect.height = 1.0f;
+            rect.x = (1.0f - scalewidth) / 2.0f;
+            rect.y = 0;
+
+            camera.rect = rect;
+        }
+
+
+            /* for (int i = 1; i < 6; i++)
+             {
+                 for (int j = -10; j < 10; j += 2)
+                 {
+                     GameObject newblock = Instantiate(block) as GameObject;
+                     newblock.transform.position = new Vector3(j, i, 0);
+
+                 }
+             }*/
+            BuildLevel(1);
 	}
 
     // Update is called once per frame
@@ -73,7 +114,7 @@ public class GameManager : MonoBehaviour {
             GameObject newPowerUp = Instantiate(powerUp) as GameObject;
             blockposition.z = -0.5f;
             newPowerUp.transform.position = blockposition;
-
+            newPowerUp.SendMessage("TheStart", powerid);
             powerUpChance = 0;
         }
     }
