@@ -71,7 +71,9 @@ public class GameManager : MonoBehaviour {
         if(Random.Range(0f, 1f) < powerUpChance)
         {
             GameObject newPowerUp = Instantiate(powerUp) as GameObject;
+            blockposition.z = -0.5f;
             newPowerUp.transform.position = blockposition;
+
             powerUpChance = 0;
         }
     }
