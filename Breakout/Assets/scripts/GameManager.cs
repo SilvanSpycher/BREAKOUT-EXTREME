@@ -9,10 +9,21 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private float chanceIncrease;
     [SerializeField] private GameObject powerUp;
     [SerializeField] private GameObject block;
+    [SerializeField] private LevelBuilder levelBuilder;
 
-	// Use this for initialization
-	void Start () {
-		
+
+    // Use this for initialization
+    void Start () {
+       /* for (int i = 1; i < 6; i++)
+        {
+            for (int j = -10; j < 10; j += 2)
+            {
+                GameObject newblock = Instantiate(block) as GameObject;
+                newblock.transform.position = new Vector3(j, i, 0);
+
+            }
+        }*/
+        BuildLevel(1);
 	}
 
     // Update is called once per frame
@@ -95,5 +106,10 @@ public class GameManager : MonoBehaviour {
                 break;      
 
         }
+    }
+
+    private void BuildLevel(int levelnumber)
+    {
+        levelBuilder.BuildLevel(levelnumber);
     }
 }

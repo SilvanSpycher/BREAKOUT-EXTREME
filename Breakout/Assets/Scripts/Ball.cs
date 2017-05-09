@@ -6,10 +6,9 @@ public class Ball : MonoBehaviour
 {
 
     private Vector3 direction = Vector3.zero;
-    private float speed = 1f;
     private Collider collider;
     private Rigidbody rigidBody;
-    private float constantSpeed = 5f;
+    [SerializeField] private float constantSpeed = 5f;
     // Use this for initialization
     void Start()
     {
